@@ -32,7 +32,8 @@ export default class SearchAPI extends React.Component {
         const companyDetails = await this.fetchCompanyDetails(result);
 
         relevantCompanyData.push({
-          companyDetails
+          companyDetails,
+          key: companyDetails.nimi 
         });
       }
     }
@@ -55,14 +56,14 @@ export default class SearchAPI extends React.Component {
     location = location.substr(0, 1) + location.substr(1, location.length - 1).toLowerCase();
 
     if (details.results[0].businessLines.length > 0) {
-      businessLine = details.results[0].businessLines[0].name;
+      businessLine = details.results[0].businessLines[1].name;
     }
 
     const companyDetails = {
       'nimi': companyName,
       'perustamisvuosi': yearFounded,
       'toimiala': businessLine,
-      'toimipaikka': location
+      'toimipaikka': location,
     }
 
     return companyDetails;

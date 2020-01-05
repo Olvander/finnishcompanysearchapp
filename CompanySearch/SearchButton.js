@@ -69,7 +69,7 @@ export default class SearchButton extends React.Component {
             {color: this.state.textColor}
           }
         >
-          Start Search
+          Aloita haku
         </Text>
       </TouchableOpacity>
     )
@@ -84,7 +84,7 @@ const screenDimensions = {
 const styles = StyleSheet.create({
   button: {
     marginLeft: screenDimensions.width - 110,
-    marginTop: screenDimensions.height - 180,
+    marginTop: 50,
     width: 100,
     paddingVertical: 10,
     paddingHorizontal: 10,
